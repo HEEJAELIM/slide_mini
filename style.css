@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  position: relative;
+  width: 300px;
+  height: 350px;
+}
+
+input[name="tab"] {
+  display: none;
+}
+main > .img0 {
+  /* display: none; */
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.btn {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 10px;
+}
+.btn label {
+  background-color: gray;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+input[id="tab1"]:checked ~ .img1,
+input[id="tab2"]:checked ~ .img2,
+input[id="tab3"]:checked ~ .img3 {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+}
+input[id="tab1"]:checked ~ .btn label[for="tab1"],
+input[id="tab2"]:checked ~ .btn label[for="tab2"],
+input[id="tab3"]:checked ~ .btn label[for="tab3"] {
+  background-color: crimson;
+}
+input[id="tab1"]:checked ~ .sale1,
+input[id="tab2"]:checked ~ .sale2,
+input[id="tab3"]:checked ~ .sale3 {
+  opacity: 1;
+  transition-delay: 0.5s;
+  transform: translateY(0);
+}
+
+.sale1,
+.sale2,
+.sale3 {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  background-color: crimson;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: aliceblue;
+  top: 15px;
+  left: 15px;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.sale span:first-child {
+  font-size: 30px;
+}
+.sale span:last-child {
+  font-size: 20px;
+}
+.sale2 {
+  background-color: blue;
+}
+.sale3 {
+  background-color: greenyellow;
+}
